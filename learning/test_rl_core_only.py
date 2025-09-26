@@ -24,25 +24,25 @@ sys.path.append(str(Path(__file__).parent.parent.parent))
 
 # 导入RL核心组件
 try:
-    from agenticseeker.learning.rl_core.environment import (
+    from learning.rl_core.environment import (
         MobileGUIEnvironment, GUIAction, ActionSpace, StateSpace
     )
-    from agenticseeker.learning.rl_core.state import (
+    from learning.rl_core.state import (
         MultimodalStateEncoder, create_multimodal_encoder
     )
-    from agenticseeker.learning.rl_core.policies import (
+    from learning.rl_core.policies import (
         create_policy_network, ManagerPolicyNetwork, ExecutorPolicyNetwork
     )
-    from agenticseeker.learning.rl_core.experience import (
+    from learning.rl_core.experience import (
         Experience, create_experience_buffer, create_sharing_hub
     )
-    from agenticseeker.learning.rl_core.rewards import (
+    from learning.rl_core.rewards import (
         RewardCalculator, create_reward_calculator
     )
-    from agenticseeker.learning.rl_core.updates import (
+    from learning.rl_core.updates import (
         create_updater, create_update_config
     )
-    from agenticseeker.learning.rl_core.deployment import (
+    from learning.rl_core.deployment import (
         create_learning_monitor, create_policy_deployment, create_safety_guard
     )
     

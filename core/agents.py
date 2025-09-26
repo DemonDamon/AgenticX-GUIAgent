@@ -1,4 +1,4 @@
-"""Core agents for AgenticSeeker system.
+"""Core agents for AgenticX-GUIAgent system.
 
 基于AgenticX框架的核心智能体实现。
 """
@@ -15,11 +15,11 @@ from agenticx.core.tool import BaseTool
 from agenticx.llms.base import BaseLLMProvider
 from agenticx.memory.component import MemoryComponent
 
-from .base_agent import BaseAgenticSeekerAgent, AgentState
+from .base_agent import BaseAgenticXGUIAgentAgent, AgentState
 from config import AgentConfig
 
 
-class ManagerAgent(BaseAgenticSeekerAgent):
+class ManagerAgent(BaseAgenticXGUIAgentAgent):
     """Manager Agent - 负责任务分解、分配和整体协调。
     
     作为系统的核心协调者，负责：
@@ -216,7 +216,7 @@ class ManagerAgent(BaseAgenticSeekerAgent):
         ]
 
 
-class ExecutorAgent(BaseAgenticSeekerAgent):
+class ExecutorAgent(BaseAgenticXGUIAgentAgent):
     """Executor Agent - 负责执行具体的GUI操作和任务。
     
     专门负责：
@@ -370,7 +370,7 @@ class ExecutorAgent(BaseAgenticSeekerAgent):
         }
 
 
-class ActionReflectorAgent(BaseAgenticSeekerAgent):
+class ActionReflectorAgent(BaseAgenticXGUIAgentAgent):
     """Action Reflector Agent - 负责分析和反思执行结果。
     
     专门负责：
@@ -543,7 +543,7 @@ class ActionReflectorAgent(BaseAgenticSeekerAgent):
         return recommendations
 
 
-class NotetakerAgent(BaseAgenticSeekerAgent):
+class NotetakerAgent(BaseAgenticXGUIAgentAgent):
     """Notetaker Agent - 负责记录和文档化系统活动。
     
     专门负责：

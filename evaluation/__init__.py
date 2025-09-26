@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Evaluation Module
+AgenticX-GUIAgent Evaluation Module
 基于AgenticX框架的测试环境与评估系统：提供完整的测试环境和性能评估功能
 
 注意：此模块已重构以使用AgenticX框架的核心组件，避免重复实现。
@@ -17,7 +17,7 @@ Date: 2025
 
 __version__ = "1.0.0"
 __author__ = "AgenticX Team"
-__description__ = "AgenticSeeker测试环境与评估系统 - 基于AgenticX框架重构"
+__description__ = "AgenticX-GUIAgent测试环境与评估系统 - 基于AgenticX框架重构"
 
 # 核心评估组件
 from .test_environment import (

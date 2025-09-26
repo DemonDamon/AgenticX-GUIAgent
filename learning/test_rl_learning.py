@@ -24,32 +24,32 @@ sys.path.append(str(Path(__file__).parent.parent.parent))
 
 # 导入测试组件
 try:
-    from agenticseeker.learning.rl_enhanced_learning_engine import (
+    from learning.rl_enhanced_learning_engine import (
         RLEnhancedLearningEngine, RLConfiguration, RLLearningMode,
         create_rl_enhanced_learning_engine, create_rl_configuration
     )
-    from agenticseeker.learning.rl_core.environment import (
+    from learning.rl_core.environment import (
         MobileGUIEnvironment, GUIAction, ActionSpace, StateSpace
     )
-    from agenticseeker.learning.rl_core.state import (
+    from learning.rl_core.state import (
         MultimodalStateEncoder, create_multimodal_encoder
     )
-    from agenticseeker.learning.rl_core.policies import (
+    from learning.rl_core.policies import (
         create_policy_network, ManagerPolicyNetwork, ExecutorPolicyNetwork
     )
-    from agenticseeker.learning.rl_core.experience import (
+    from learning.rl_core.experience import (
         Experience, create_experience_buffer, create_sharing_hub
     )
-    from agenticseeker.learning.rl_core.rewards import (
+    from learning.rl_core.rewards import (
         RewardCalculator, create_reward_calculator
     )
-    from agenticseeker.learning.rl_core.updates import (
+    from learning.rl_core.updates import (
         create_updater, create_update_config
     )
-    from agenticseeker.learning.rl_core.deployment import (
+    from learning.rl_core.deployment import (
         create_learning_monitor, create_policy_deployment, create_safety_guard
     )
-    from agenticseeker.learning.knowledge_integration import (
+    from learning.knowledge_integration import (
         KnowledgeLearningBridge, create_knowledge_learning_bridge
     )
     
@@ -555,7 +555,7 @@ class RLLearningTester:
             assert rl_success
             
             # 测试学习触发
-            from agenticseeker.learning.learning_engine import LearningTrigger
+            from learning.learning_engine import LearningTrigger
             
             result = await engine.trigger_learning(
                 trigger=LearningTrigger.MANUAL,

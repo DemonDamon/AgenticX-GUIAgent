@@ -1,4 +1,4 @@
-# AgenticSeeker 移动GUI智能体系统依赖
+# AgenticX-GUIAgent 移动GUI智能体系统依赖
 # 基于AgenticX框架的移动设备自动化操作系统
 # 支持自然语言驱动的Android GUI操作
 

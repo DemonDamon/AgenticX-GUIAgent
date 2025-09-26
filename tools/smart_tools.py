@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Smart GUI Tools
+AgenticX-GUIAgent Smart GUI Tools
 智能GUI工具：基于AI的智能化移动设备操作
 
 Author: AgenticX Team

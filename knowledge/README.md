@@ -1,4 +1,4 @@
-# AgenticSeeker Knowledge Management Module
+# AgenticX-GUIAgent Knowledge Management Module
 
 基于AgenticX框架的知识管理模块，使用AgenticX的storage和retrieval组件提供完整的知识存储、检索、管理和同步功能。
 
@@ -37,7 +37,7 @@
 
 ## 概述
 
-AgenticSeeker Knowledge模块提供了基于AgenticX框架的完整知识管理和共享系统。该模块已重构以充分利用AgenticX的核心组件，避免重复实现，提供现代化的多智能体知识协作机制。
+AgenticX-GUIAgent Knowledge模块提供了基于AgenticX框架的完整知识管理和共享系统。该模块已重构以充分利用AgenticX的核心组件，避免重复实现，提供现代化的多智能体知识协作机制。
 
 ## 重构说明
 
@@ -79,7 +79,7 @@ AgenticSeeker Knowledge模块提供了基于AgenticX框架的完整知识管理�
 ```python
 from agenticx.core.event_bus import EventBus
 from agenticx.memory.component import Memory
-from agenticseeker.knowledge import (
+from knowledge import (
     KnowledgePool,
     KnowledgeManager,
     KnowledgeItem,
@@ -117,7 +117,7 @@ await knowledge_pool.start()
 ### 知识贡献
 
 ```python
-from agenticseeker.knowledge import (
+from knowledge import (
     KnowledgeItem,
     KnowledgeType,
     KnowledgeSource,
@@ -155,7 +155,7 @@ print(f"知识贡献{'成功' if success else '失败'}")
 ### 知识查询
 
 ```python
-from agenticseeker.knowledge import QueryRequest
+from knowledge import QueryRequest
 
 # 创建查询请求
 query_request = QueryRequest(
@@ -183,7 +183,7 @@ for knowledge in result.items:
 ### 知识订阅
 
 ```python
-from agenticseeker.knowledge import KnowledgeType
+from knowledge import KnowledgeType
 
 # 订阅知识更新
 def on_knowledge_update(knowledge):
@@ -203,7 +203,7 @@ print(f"订阅ID: {subscription_id}")
 ### 知识分享
 
 ```python
-from agenticseeker.knowledge import ShareScope
+from knowledge import ShareScope
 
 # 分享知识给特定智能体
 success = await knowledge_pool.share_knowledge(
@@ -304,21 +304,21 @@ event_bus.subscribe("knowledge_stored", on_knowledge_stored)
 
 ### 内存存储
 ```python
-from agenticseeker.knowledge import InMemoryKnowledgeStore
+from knowledge import InMemoryKnowledgeStore
 
 store = InMemoryKnowledgeStore()
 ```
 
 ### SQLite存储
 ```python
-from agenticseeker.knowledge import SQLiteKnowledgeStore
+from knowledge import SQLiteKnowledgeStore
 
 store = SQLiteKnowledgeStore(db_path="knowledge.db")
 ```
 
 ### 工厂模式
 ```python
-from agenticseeker.knowledge import KnowledgeStoreFactory
+from knowledge import KnowledgeStoreFactory
 
 # 创建内存存储
 store = KnowledgeStoreFactory.create_store("memory")

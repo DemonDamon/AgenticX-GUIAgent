@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Tool Adapters
+AgenticX-GUIAgent Tool Adapters
 工具适配器：为不同平台和设备提供统一的工具接口
 
 Author: AgenticX Team

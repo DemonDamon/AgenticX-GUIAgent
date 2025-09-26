@@ -1,6 +1,6 @@
-# AgenticSeeker: 基于 AgenticX 的自主移动GUI智能体系统
+# AgenticX-GUIAgent: 基于 AgenticX 的自主移动GUI智能体系统
 
-AgenticSeeker 是一个先进的多智能体系统，构建于 `agenticx` (v0.2.1) 框架之上。它旨在通过自然语言指令，实现对Android设备GUI的复杂操作自动化。系统集成了强大的多模态能力、知识管理和强化学习机制，使其能够持续学习并优化其行为。
+AgenticX-GUIAgent 是一个先进的多智能体系统，构建于 `agenticx` (v0.2.1) 框架之上。它旨在通过自然语言指令，实现对Android设备GUI的复杂操作自动化。系统集成了强大的多模态能力、知识管理和强化学习机制，使其能够持续学习并优化其行为。
 
 ## 核心特性
 
@@ -20,8 +20,8 @@ graph TD
         A[用户/开发者]
     end
 
-    subgraph "AgenticSeeker 系统 (agenticseeker.core.system.AgenticSeekerSystem)"
-        B(AgenticSeekerSystem)
+    subgraph "AgenticX-GUIAgent 系统 (core.system.AgenticXGUIAgentSystem)"
+        B(AgenticXGUIAgentSystem)
         C(AgenticX Agent)
         D(工作流引擎)
         E(事件总线)
@@ -33,7 +33,7 @@ graph TD
         B -- "使用" --> F
     end
 
-    subgraph "智能体 (agenticseeker.agents)"
+    subgraph "智能体 (agents)"
         G(ManagerAgent)
         H(ExecutorAgent)
         I(ActionReflectorAgent)
@@ -45,9 +45,9 @@ graph TD
         C -- "包含" --> J
     end
 
-    subgraph "核心协调与基类 (agenticseeker.core)"
+    subgraph "核心协调与基类 (core)"
         K(AgentCoordinator)
-        L(BaseAgenticSeekerAgent)
+        L(BaseAgenticXGUIAgentAgent)
 
         D -- "执行" --> K
         K -- "协调" --> G
@@ -57,7 +57,7 @@ graph TD
         C -- "继承" --> L
     end
 
-    subgraph "知识管理 (agenticseeker.knowledge)"
+    subgraph "知识管理 (knowledge)"
         M(KnowledgeManager)
         N(KnowledgePool)
         O(HybridEmbeddingManager)
@@ -71,7 +71,7 @@ graph TD
         I -- "读取" --> N
     end
 
-    subgraph "数据飞轮 & 强化学习 (agenticseeker.learning)"
+    subgraph "数据飞轮 & 强化学习 (learning)"
         P(RLEnhancedLearningEngine)
         Q(LearningCoordinator)
         R(RL Core)
@@ -139,7 +139,7 @@ bash setup.sh
 
 该脚本会执行以下操作：
 *   检查 Conda, ADB, Python 环境。
-*   创建名为 `agenticseeker` 的 Conda 环境。
+*   创建名为 `agenticx-guiagent` 的 Conda 环境。
 *   激活环境并安装所有依赖。
 *   在开发模式下安装 `agenticx` 框架。
 *   从 `.env.example` 创建 `.env` 配置文件。
@@ -154,11 +154,11 @@ bash setup.sh
 ```bash
 # 假定您已克隆仓库
 # git clone <repository_url>
-# cd AgenticSeeker
+# cd AgenticX-GUIAgent
 
 # 创建并激活 Conda 环境
-conda create -n agenticseeker python=3.9 -y
-conda activate agenticseeker
+conda create -n agenticx-guiagent python=3.9 -y
+conda activate agenticx-guiagent
 ```
 
 #### 第二步：安装依赖
@@ -229,7 +229,7 @@ LOG_LEVEL=INFO
 
 ## 运行系统
 
-### 1. 启动 AgenticSeeker
+### 1. 启动 AgenticX-GUIAgent
 
 确保您的Android设备已成功连接。
 
@@ -321,7 +321,7 @@ python main.py --log-level DEBUG
     ```
 
 3.  **启动服务**:
-    使用 Docker Compose 一键启动所有服务，包括 AgenticSeeker 应用、PostgreSQL 数据库、Redis 缓存等。
+    使用 Docker Compose 一键启动所有服务，包括 AgenticX-GUIAgent 应用、PostgreSQL 数据库、Redis 缓存等。
     ```bash
     docker-compose up --build
     ```
@@ -346,7 +346,7 @@ python main.py --log-level DEBUG
 2.  **依赖安装失败**:
     ```bash
     # 确保在正确的conda环境中
-    conda activate agenticseeker
+    conda activate agenticx-guiagent
     
     # 更新pip并清理缓存
     pip install --upgrade pip
@@ -373,7 +373,7 @@ python main.py --log-level DEBUG
 python main.py --log-level DEBUG
 
 # 查看日志文件 (如果配置了文件日志)
-# tail -f logs/agenticseeker.log
+# tail -f logs/agenticx-guiagent.log
 ```
 
 ## 性能优化
@@ -400,9 +400,9 @@ class CustomTool(BaseTool):
 
 ```python
 # 继承基础智能体类
-from core.base_agent import BaseAgenticSeekerAgent
+from core.base_agent import BaseAgenticXGUIAgentAgent
 
-class CustomAgent(BaseAgenticSeekerAgent):
+class CustomAgent(BaseAgenticXGUIAgentAgent):
     async def process_task(self, task):
         # 实现自定义逻辑
         pass
@@ -427,7 +427,7 @@ class CustomAgent(BaseAgenticSeekerAgent):
 
 ## 支持与反馈
 
-- 项目地址: `https://github.com/DemonDamon/AgenticSeeker` (请替换为实际地址)
+- 项目地址: `https://github.com/DemonDamon/AgenticX-GUIAgent` (请替换为实际地址)
 - 问题反馈: 在 GitHub 上创建 Issue
 
 ---

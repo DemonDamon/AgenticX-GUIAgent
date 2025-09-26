@@ -1,8 +1,8 @@
-# AgenticSeeker RL增强学习模块
+# AgenticX-GUIAgent RL增强学习模块
 
 ## 概述
 
-AgenticSeeker学习模块是一个基于强化学习(RL)增强的智能学习系统，在保持原有五阶段学习架构的基础上，集成了完整的强化学习能力和知识协作机制。
+AgenticX-GUIAgent学习模块是一个基于强化学习(RL)增强的智能学习系统，在保持原有五阶段学习架构的基础上，集成了完整的强化学习能力和知识协作机制。
 
 ## 🎯 核心特性
 
@@ -31,7 +31,7 @@ AgenticSeeker学习模块是一个基于强化学习(RL)增强的智能学习系
 ## 📁 模块结构
 
 ```
-agenticseeker/learning/
+learning/
 ├── __init__.py                     # 模块导出和版本管理
 ├── learning_engine.py              # 原始学习引擎(保持兼容)
 ├── rl_enhanced_learning_engine.py  # RL增强学习引擎
@@ -62,7 +62,7 @@ agenticseeker/learning/
 ### 1. 基础使用(传统模式)
 
 ```python
-from agenticseeker.learning import LearningEngine, LearningConfiguration
+from learning import LearningEngine, LearningConfiguration
 
 # 创建传统学习引擎
 config = LearningConfiguration()
@@ -79,7 +79,7 @@ result = await engine.trigger_learning(
 ### 2. RL增强模式
 
 ```python
-from agenticseeker.learning import (
+from learning import (
     RLEnhancedLearningEngine, RLConfiguration, RLLearningMode,
     create_rl_enhanced_learning_engine, create_rl_configuration
 )
@@ -115,7 +115,7 @@ print(f"学习完成: RL启用={result.rl_enabled}, 奖励={result.average_rewar
 ### 3. 知识协作模式
 
 ```python
-from agenticseeker.learning import (
+from learning import (
     create_knowledge_learning_bridge,
     create_integration_config
 )
@@ -144,13 +144,13 @@ print(f"同步完成: {sync_result.items_synced} 项知识")
 
 ```bash
 # 简单RL功能验证(推荐)
-python agenticseeker/learning/test_simple_rl.py
+python learning/test_simple_rl.py
 
 # RL核心组件测试
-python agenticseeker/learning/test_rl_core_only.py
+python learning/test_rl_core_only.py
 
 # 完整RL学习测试(需要完整依赖)
-python -m agenticseeker.learning.test_rl_learning
+python -m learning.test_rl_learning
 ```
 
 ### 测试结果示例
@@ -338,7 +338,7 @@ safety_guard.emergency_stop(
 pip install torch torchvision numpy scipy pillow
 
 # 运行测试
-python agenticseeker/learning/test_simple_rl.py
+python learning/test_simple_rl.py
 ```
 
 ### 添加新的RL算法
@@ -371,6 +371,6 @@ AgenticX Team - 专注于智能体系统和强化学习技术
 
 ---
 
-**🎉 恭喜！AgenticSeeker RL增强学习模块开发完成！**
+**🎉 恭喜！AgenticX-GUIAgent RL增强学习模块开发完成！**
 
-这个模块提供了完整的强化学习能力，同时保持了与现有系统的兼容性。通过渐进式的RL能力启用和知识协作机制，为AgenticSeeker项目带来了强大的在线学习和自适应优化能力。
+这个模块提供了完整的强化学习能力，同时保持了与现有系统的兼容性。通过渐进式的RL能力启用和知识协作机制，为AgenticX-GUIAgent项目带来了强大的在线学习和自适应优化能力。

@@ -1,4 +1,4 @@
-# AgenticSeeker 测试套件
+# AgenticX-GUIAgent 测试套件
 
 基于AgenticX框架的多模态智能体系统测试文件集合。
 

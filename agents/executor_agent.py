@@ -21,7 +21,7 @@ from agenticx.core.event_bus import EventBus
 from agenticx.llms.base import BaseLLMProvider
 from agenticx.memory.component import MemoryComponent
 
-from core.base_agent import BaseAgenticSeekerAgent
+from core.base_agent import BaseAgenticXGUIAgentAgent
 from config import AgentConfig
 from utils import get_iso_timestamp
 from tools.adb_tools import ADBClickTool, ADBSwipeTool, ADBInputTool, ADBScreenshotTool
@@ -441,7 +441,7 @@ class WaitTool(BaseTool):
         return wait_result
 
 
-class ExecutorAgent(BaseAgenticSeekerAgent):
+class ExecutorAgent(BaseAgenticXGUIAgentAgent):
     """动作执行器智能体
     
     负责：

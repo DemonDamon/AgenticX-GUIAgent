@@ -1,8 +1,8 @@
-# AgenticSeeker Evaluation Module
+# AgenticX-GUIAgent Evaluation Module
 
 ## 概述
 
-AgenticSeeker评估模块提供了基于AgenticX框架的完整测试环境和性能评估功能。该模块已重构以避免重复实现，充分利用AgenticX的核心组件。
+AgenticX-GUIAgent评估模块提供了基于AgenticX框架的完整测试环境和性能评估功能。该模块已重构以避免重复实现，充分利用AgenticX的核心组件。
 
 ## 重构说明
 
@@ -36,7 +36,7 @@ AgenticSeeker评估模块提供了基于AgenticX框架的完整测试环境和�
 
 ```python
 from agenticx.core.event_bus import EventBus
-from agenticseeker.evaluation import (
+from evaluation import (
     EvaluationFramework,
     EvaluationConfig,
     EvaluationMode,
@@ -55,7 +55,7 @@ framework = EvaluationFramework(
 # 配置评估
 config = EvaluationConfig(
     name="agent_performance_test",
-    description="AgenticSeeker智能体性能评估",
+    description="AgenticX-GUIAgent智能体性能评估",
     mode=EvaluationMode.STANDARD,
     test_timeout=300.0,
     metrics=["accuracy", "response_time", "efficiency"]
@@ -69,7 +69,7 @@ print(f"评估完成，成功率: {result.get_success_rate():.2%}")
 ### 性能评估
 
 ```python
-from agenticseeker.evaluation import (
+from evaluation import (
     PerformanceEvaluator,
     MetricType,
     EvaluationLevel
@@ -102,7 +102,7 @@ for metric in report.metrics:
 ### 测试环境
 
 ```python
-from agenticseeker.evaluation import (
+from evaluation import (
     TestEnvironment,
     TestConfig,
     TestType,
@@ -184,7 +184,7 @@ event_bus.subscribe("evaluation_completed", on_evaluation_completed)
 ### 自定义指标
 
 ```python
-from agenticseeker.evaluation.performance_evaluator import BaseMetric, MetricValue
+from evaluation.performance_evaluator import BaseMetric, MetricValue
 
 class CustomMetric(BaseMetric):
     def __init__(self):
@@ -206,7 +206,7 @@ evaluator.register_metric(CustomMetric())
 ### 自定义测试用例
 
 ```python
-from agenticseeker.evaluation.test_environment import TestCase
+from evaluation.test_environment import TestCase
 
 class CustomTestCase(TestCase):
     async def setup(self):

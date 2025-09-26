@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Evaluation Metrics
+AgenticX-GUIAgent Evaluation Metrics
 评估指标：定义各种评估指标和分析方法
 
 Author: AgenticX Team

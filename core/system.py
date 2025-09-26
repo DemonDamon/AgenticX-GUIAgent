@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker系统主类模块
+AgenticX-GUIAgent系统主类模块
 
-提供AgenticSeeker系统的核心功能和生命周期管理。
+提供AgenticX-GUIAgent系统的核心功能和生命周期管理。
 """
 
 import asyncio
@@ -19,20 +19,20 @@ from agenticx.core.component import Component
 from agenticx.memory.component import MemoryComponent
 from agenticx.llms.base import BaseLLMProvider
 
-from .base_agent import BaseAgenticSeekerAgent
-from config import AgenticSeekerConfig, AgentConfig, WorkflowConfig
+from .base_agent import BaseAgenticXGUIAgentAgent
+from config import AgenticXGUIAgentConfig, AgentConfig, WorkflowConfig
 from utils import setup_logger, ensure_directory
 
 
-class AgenticSeekerSystem(Component):
-    """AgenticSeeker系统主类
+class AgenticXGUIAgentSystem(Component):
+    """AgenticX-GUIAgent系统主类
     
-    基于AgenticX Platform构建，负责整个AgenticSeeker系统的初始化、配置、启动和管理。
+    基于AgenticX Platform构建，负责整个AgenticX-GUIAgent系统的初始化、配置、启动和管理。
     提供统一的系统接口和生命周期管理。
     """
     
-    def __init__(self, config: AgenticSeekerConfig):
-        super().__init__(name="agenticseeker_system")
+    def __init__(self, config: AgenticXGUIAgentConfig):
+        super().__init__(name="agenticx_guiagent_system")
         
         self.config = config
         self.logger = logger
@@ -41,8 +41,8 @@ class AgenticSeekerSystem(Component):
         self.event_bus = EventBus()
         
         # 智能体管理
-        self.agents: Dict[str, BaseAgenticSeekerAgent] = {}
-        self.agent_classes: Dict[str, Type[BaseAgenticSeekerAgent]] = {}
+        self.agents: Dict[str, BaseAgenticXGUIAgentAgent] = {}
+        self.agent_classes: Dict[str, Type[BaseAgenticXGUIAgentAgent]] = {}
         
         # 系统状态
         self._initialized = False
@@ -56,7 +56,7 @@ class AgenticSeekerSystem(Component):
         if self._initialized:
             return
         
-        logger.info("开始初始化AgenticSeeker系统...")
+        logger.info("开始初始化AgenticX-GUIAgent系统...")
         
         try:
             # 初始化InfoPool
@@ -75,7 +75,7 @@ class AgenticSeekerSystem(Component):
             await self._register_workflows()
             
             self._initialized = True
-            logger.info("AgenticSeeker系统初始化完成")
+            logger.info("AgenticX-GUIAgent系统初始化完成")
             
         except Exception as e:
             logger.error(f"系统初始化失败: {e}")
@@ -89,7 +89,7 @@ class AgenticSeekerSystem(Component):
         if self._running:
             return
         
-        logger.info("启动AgenticSeeker系统...")
+        logger.info("启动AgenticX-GUIAgent系统...")
         
         try:
             # 启动InfoPool
@@ -103,7 +103,7 @@ class AgenticSeekerSystem(Component):
                 await agent.start()
             
             self._running = True
-            logger.info("AgenticSeeker系统启动完成")
+            logger.info("AgenticX-GUIAgent系统启动完成")
             
         except Exception as e:
             logger.error(f"系统启动失败: {e}")
@@ -115,7 +115,7 @@ class AgenticSeekerSystem(Component):
         if not self._running:
             return
         
-        logger.info("停止AgenticSeeker系统...")
+        logger.info("停止AgenticX-GUIAgent系统...")
         
         try:
             # 停止所有智能体
@@ -134,7 +134,7 @@ class AgenticSeekerSystem(Component):
                 await self.info_pool.stop()
             
             self._running = False
-            logger.info("AgenticSeeker系统已停止")
+            logger.info("AgenticX-GUIAgent系统已停止")
             
         except Exception as e:
             logger.error(f"系统停止失败: {e}")
@@ -175,7 +175,7 @@ class AgenticSeekerSystem(Component):
             logger.error(f"任务执行失败: {task_description}, 错误: {e}")
             raise
     
-    def get_agent(self, agent_id: str) -> Optional[BaseAgenticSeekerAgent]:
+    def get_agent(self, agent_id: str) -> Optional[BaseAgenticXGUIAgentAgent]:
         """获取智能体
         
         Args:
@@ -207,7 +207,7 @@ class AgenticSeekerSystem(Component):
     def register_agent_class(
         self,
         agent_type: str,
-        agent_class: Type[BaseAgenticSeekerAgent]
+        agent_class: Type[BaseAgenticXGUIAgentAgent]
     ) -> None:
         """注册智能体类
         
@@ -221,8 +221,8 @@ class AgenticSeekerSystem(Component):
     async def add_agent(
         self,
         agent_config: AgentConfig,
-        agent_class: Optional[Type[BaseAgenticSeekerAgent]] = None
-    ) -> BaseAgenticSeekerAgent:
+        agent_class: Optional[Type[BaseAgenticXGUIAgentAgent]] = None
+    ) -> BaseAgenticXGUIAgentAgent:
         """添加智能体
         
         Args:

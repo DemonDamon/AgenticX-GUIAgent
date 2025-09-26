@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker GUI Tools Core
+AgenticX-GUIAgent GUI Tools Core
 GUI工具核心：基于AgenticX框架的工具基础架构
 
 本模块已完全基于AgenticX框架重构：
@@ -36,7 +36,7 @@ from agenticx.core.event_bus import EventBus
 from agenticx.core.event import Event
 from pydantic import BaseModel, Field
 
-# AgenticSeeker工具
+# AgenticX-GUIAgent工具
 from utils import get_iso_timestamp, setup_logger
 
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-# AgenticSeeker 自动化环境搭建脚本
+# AgenticX-GUIAgent 自动化环境搭建脚本
 # 使用方法: bash setup.sh
 
 set -e  # 遇到错误立即退出
@@ -72,22 +72,22 @@ check_python() {
 
 # 创建conda环境
 create_conda_env() {
-    print_info "创建conda环境: agenticseeker"
+    print_info "创建conda环境: agenticx-guiagent"
     
     # 检查环境是否已存在
-    if conda env list | grep -q "agenticseeker"; then
-        print_warning "环境agenticseeker已存在，是否重新创建? (y/N)"
+    if conda env list | grep -q "agenticx-guiagent"; then
+        print_warning "环境agenticx-guiagent已存在，是否重新创建? (y/N)"
         read -r response
         if [[ "$response" =~ ^[Yy]$ ]]; then
             print_info "删除现有环境..."
-            conda env remove -n agenticseeker -y
+            conda env remove -n agenticx-guiagent -y
         else
             print_info "使用现有环境"
             return 0
         fi
     fi
     
-    conda create -n agenticseeker python=3.9 -y
+    conda create -n agenticx-guiagent python=3.9 -y
     print_success "Conda环境创建成功"
 }
 
@@ -95,7 +95,7 @@ create_conda_env() {
 activate_conda_env() {
     print_info "激活conda环境"
     source "$(conda info --base)/etc/profile.d/conda.sh"
-    conda activate agenticseeker
+    conda activate agenticx-guiagent
     print_success "环境已激活: $(which python)"
 }
 
@@ -216,11 +216,11 @@ create_run_script() {
     
     cat > run.sh << 'EOF'
 #!/bin/bash
-# AgenticSeeker 启动脚本
+# AgenticX-GUIAgent 启动脚本
 
 # 激活conda环境
 source "$(conda info --base)/etc/profile.d/conda.sh"
-conda activate agenticseeker
+conda activate agenticx-guiagent
 
 # 检查环境变量
 if [ ! -f ".env" ]; then
@@ -234,7 +234,7 @@ if ! adb devices | grep -q "device$"; then
 fi
 
 # 启动系统
-echo "启动AgenticSeeker系统..."
+echo "启动AgenticX-GUIAgent系统..."
 python main.py "$@"
 EOF
 
@@ -244,7 +244,7 @@ EOF
 
 # 显示使用说明
 show_usage() {
-    print_success "\n🎉 AgenticSeeker环境搭建完成！"
+    print_success "\n🎉 AgenticX-GUIAgent环境搭建完成！"
     print_info "\n📋 接下来的步骤:"
     print_info "\n1. 配置环境变量:"
     print_info "   nano .env  # 编辑API密钥等配置"
@@ -262,7 +262,7 @@ show_usage() {
 
 # 主函数
 main() {
-    print_info "🚀 开始AgenticSeeker环境搭建"
+    print_info "🚀 开始AgenticX-GUIAgent环境搭建"
     print_info "项目路径: $(pwd)"
     
     # 系统检查

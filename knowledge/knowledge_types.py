@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Knowledge Types
+AgenticX-GUIAgent Knowledge Types
 基于AgenticX框架的知识池数据类型定义：定义知识项、查询、同步等核心数据结构
 
 重构说明：

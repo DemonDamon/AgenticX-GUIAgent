@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker 系统测试脚本
+AgenticX-GUIAgent 系统测试脚本
 用于验证系统各组件是否正常工作
 
 Usage:
@@ -143,9 +143,9 @@ class SystemTester:
         
         return True
     
-    def test_agenticseeker_components(self) -> bool:
-        """测试AgenticSeeker组件"""
-        self.print_header("AgenticSeeker组件测试")
+    def test_agenticx_guiagent_components(self) -> bool:
+        """测试AgenticX-GUIAgent组件"""
+        self.print_header("AgenticX-GUIAgent组件测试")
         
         # 测试目录结构
         directories = [
@@ -226,11 +226,11 @@ class SystemTester:
         
         try:
             # 测试主应用类导入
-            from main import AgenticSeekerApp
-            self.print_test("主应用类", "PASS", "AgenticSeekerApp导入成功")
+            from main import AgenticXGUIAgentApp
+            self.print_test("主应用类", "PASS", "AgenticXGUIAgentApp导入成功")
             
             # 测试应用初始化（不实际启动）
-            app = AgenticSeekerApp()
+            app = AgenticXGUIAgentApp()
             self.print_test("应用初始化", "PASS", "应用对象创建成功")
             
             # 测试配置加载
@@ -300,7 +300,7 @@ class SystemTester:
         
         if self.failed_tests == 0:
             print(f"\n🎉 所有测试通过！系统准备就绪。")
-            print(f"\n🚀 可以开始使用AgenticSeeker:")
+            print(f"\n🚀 可以开始使用AgenticX-GUIAgent:")
             print(f"   python main.py --interactive")
         else:
             print(f"\n⚠️  有{self.failed_tests}个测试失败，请检查上述错误信息。")
@@ -308,7 +308,7 @@ class SystemTester:
     
     async def run_all_tests(self, test_device: bool = False):
         """运行所有测试"""
-        print("🧪 AgenticSeeker 系统测试")
+        print("🧪 AgenticX-GUIAgent 系统测试")
         print(f"📁 项目路径: {project_root}")
         
         # 基础测试
@@ -318,7 +318,7 @@ class SystemTester:
         
         # 组件测试
         self.test_agenticx_components()
-        self.test_agenticseeker_components()
+        self.test_agenticx_guiagent_components()
         
         # 设备测试（可选）
         if test_device:
@@ -334,7 +334,7 @@ class SystemTester:
 
 def main():
     """主函数"""
-    parser = argparse.ArgumentParser(description="AgenticSeeker系统测试")
+    parser = argparse.ArgumentParser(description="AgenticX-GUIAgent系统测试")
     parser.add_argument("--device-test", action="store_true", help="包含设备连接测试")
     parser.add_argument("--component", choices=["imports", "config", "agents", "tools"], help="只测试特定组件")
     
@@ -350,7 +350,7 @@ def main():
             elif args.component == "config":
                 tester.test_config()
             elif args.component == "agents":
-                tester.test_agenticseeker_components()
+                tester.test_agenticx_guiagent_components()
             elif args.component == "tools":
                 tester.test_device_connection()
         else:

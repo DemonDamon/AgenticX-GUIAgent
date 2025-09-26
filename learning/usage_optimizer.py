@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker学习引擎 - 使用优化器（第四阶段）(基于AgenticX框架重构)
+AgenticX-GUIAgent学习引擎 - 使用优化器（第四阶段）(基于AgenticX框架重构)
 
 该模块实现了学习引擎的第四阶段：使用优化器（Usage Optimizer）。
 负责优化智能体的使用模式，提高执行效率和成功率。

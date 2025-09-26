@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Test Scenarios
+AgenticX-GUIAgent Test Scenarios
 测试场景：定义各种测试场景和用例
 
 Author: AgenticX Team
@@ -21,7 +21,7 @@ from loguru import logger
 
 from utils import get_iso_timestamp
 from utils import setup_logger
-from core.base_agent import BaseAgenticSeekerAgent
+from core.base_agent import BaseAgenticXGUIAgentAgent
 from tools.gui_tools import GUITool, ToolResult, Coordinate
 from .test_environment import TestCase, TestConfig, TestType, TestPriority, TestStep
 

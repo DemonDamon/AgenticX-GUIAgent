@@ -1,10 +1,10 @@
-# AgenticSeeker Tools Module
+# AgenticX-GUIAgent Tools Module
 
 基于AgenticX框架的GUI操作工具集
 
 ## 概述
 
-AgenticSeeker Tools模块已完全基于AgenticX框架重构，提供了统一、标准化的移动设备GUI操作工具集。本模块展示了如何正确基于AgenticX框架构建专业的工具系统。
+AgenticX-GUIAgent Tools模块已完全基于AgenticX框架重构，提供了统一、标准化的移动设备GUI操作工具集。本模块展示了如何正确基于AgenticX框架构建专业的工具系统。
 
 ## 主要变更
 
@@ -105,7 +105,7 @@ class GUIToolManager(Component):
 
 ```python
 from agenticx.core.event_bus import EventBus
-from agenticseeker.tools import (
+from tools import (
     GUIToolManager, ClickTool, ToolParameters, Coordinate
 )
 
@@ -144,7 +144,7 @@ event_bus.subscribe('tool_execution_end', on_tool_executed)
 ### 批量执行
 
 ```python
-from agenticseeker.tools import BatchExecutor
+from tools import BatchExecutor
 
 batch_executor = BatchExecutor(tool_manager)
 
@@ -160,7 +160,7 @@ results = await batch_executor.execute_sequential(tasks)
 ### 智能工具使用
 
 ```python
-from agenticseeker.tools import SmartClickTool
+from tools import SmartClickTool
 
 smart_click = SmartClickTool(event_bus=event_bus)
 
@@ -358,4 +358,4 @@ class CustomAdapter(ToolAdapter):
 
 ---
 
-本模块展示了如何正确基于AgenticX框架构建专业的工具系统，为AgenticSeeker项目提供了强大的GUI操作能力。
+本模块展示了如何正确基于AgenticX框架构建专业的工具系统，为AgenticX-GUIAgent项目提供了强大的GUI操作能力。

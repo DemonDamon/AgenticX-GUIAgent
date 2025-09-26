@@ -28,7 +28,7 @@ except ImportError:
 from agenticx.llms.bailian_provider import BailianProvider
 from agenticx.core.event_bus import EventBus
 from agents.manager_agent import ManagerAgent
-from core.info_pool import AgenticSeekerInfoPool
+from core.info_pool import AgenticXGUIAgentInfoPool
 from config import AgentConfig
 from utils import setup_logger
 
@@ -56,7 +56,7 @@ async def test_multimodal_task_decomposition():
     event_bus = EventBus()
     
     # 初始化信息池
-    info_pool = AgenticSeekerInfoPool()
+    info_pool = AgenticXGUIAgentInfoPool()
     
     # 创建ManagerAgent配置
     manager_config = AgentConfig(

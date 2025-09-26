@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Evaluation Reports
+AgenticX-GUIAgent Evaluation Reports
 报告生成：实现评估结果的报告生成和可视化功能
 
 Author: AgenticX Team

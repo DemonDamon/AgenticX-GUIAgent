@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Knowledge Store
+AgenticX-GUIAgent Knowledge Store
 基于AgenticX框架的知识存储：实现知识的持久化存储、索引管理和查询功能
 
 重构说明：

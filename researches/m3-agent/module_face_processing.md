@@ -2,7 +2,7 @@
 
 ## 1. 模块概述
 
-- **模块路径**：`AgenticSeeker/thirdparty/m3-agent/mmagent/src/` + `AgenticSeeker/thirdparty/m3-agent/mmagent/face_processing.py`
+- **模块路径**：`AgenticX-GUIAgent/thirdparty/m3-agent/mmagent/src/` + `AgenticX-GUIAgent/thirdparty/m3-agent/mmagent/face_processing.py`
 - **核心职责**：专门处理视频中的人脸检测、特征提取、聚类和身份关联，是M3-Agent多模态感知能力的重要组成部分
 - **主要组件**：人脸提取器、人脸聚类器、人脸处理协调器
 

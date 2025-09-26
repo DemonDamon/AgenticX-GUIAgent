@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Evaluation Benchmarks
+AgenticX-GUIAgent Evaluation Benchmarks
 基准测试：定义基准测试套件和性能基准
 
 Author: AgenticX Team

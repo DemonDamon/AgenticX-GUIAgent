@@ -21,7 +21,7 @@ from agenticx.core.event_bus import EventBus
 from agenticx.llms.base import BaseLLMProvider
 from agenticx.memory.component import MemoryComponent
 
-from core.base_agent import BaseAgenticSeekerAgent
+from core.base_agent import BaseAgenticXGUIAgentAgent
 from core.info_pool import InfoPool
 from config import AgentConfig
 from utils import get_iso_timestamp
@@ -630,7 +630,7 @@ class AgentCoordinationTool(BaseTool):
         return coordination_result
 
 
-class ManagerAgent(BaseAgenticSeekerAgent):
+class ManagerAgent(BaseAgenticXGUIAgentAgent):
     """任务管理器智能体
     
     负责：

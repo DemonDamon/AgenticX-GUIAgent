@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Knowledge Pool Module
+AgenticX-GUIAgent Knowledge Pool Module
 基于AgenticX框架的共享知识池模块：提供跨智能体的知识管理和共享机制
 
 重构说明：
@@ -16,7 +16,7 @@ Date: 2025
 
 __version__ = "1.0.0"
 __author__ = "AgenticX Team"
-__description__ = "AgenticSeeker共享知识池模块 - 基于AgenticX框架重构"
+__description__ = "AgenticX-GUIAgent共享知识池模块 - 基于AgenticX框架重构"
 
 # 导入核心组件
 from .knowledge_pool import KnowledgePool

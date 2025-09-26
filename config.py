@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker配置管理模块
+AgenticX-GUIAgent配置管理模块
 
 基于AgenticX框架的配置管理系统，提供系统配置的数据模型和管理功能。
 
@@ -50,7 +50,7 @@ class AgenticXConfig:
     memory_embedding_model: str = "text-embedding-3-small"
     
     # 平台配置
-    platform_name: str = "AgenticSeeker"
+    platform_name: str = "AgenticX-GUIAgent"
     platform_version: str = "1.0.0"
     platform_environment: str = "development"
 
@@ -240,7 +240,7 @@ class MonitoringConfig:
     enabled: bool = True
     metrics: Dict[str, Any] = field(default_factory=dict)
     log_level: str = "INFO"
-    log_file: str = "./logs/agenticseeker.log"
+    log_file: str = "./logs/agenticx-guiagent.log"
     agenticx_observability: Dict[str, Any] = field(default_factory=dict)
     logging: Dict[str, Any] = field(default_factory=dict)
     alerts: Dict[str, Any] = field(default_factory=dict)
@@ -259,8 +259,8 @@ class EvaluationConfig:
 
 
 @dataclass
-class AgenticSeekerConfig:
-    """AgenticSeeker主配置类 - 基于AgenticX框架"""
+class AgenticXGUIAgentConfig:
+    """AgenticX-GUIAgent主配置类 - 基于AgenticX框架"""
     # AgenticX框架配置
     agenticx: AgenticXConfig = field(default_factory=AgenticXConfig)
     # 原有配置
@@ -274,7 +274,7 @@ class AgenticSeekerConfig:
     evaluation: EvaluationConfig = field(default_factory=EvaluationConfig)
     
     @classmethod
-    def from_dict(cls, data: Dict[str, Any]) -> "AgenticSeekerConfig":
+    def from_dict(cls, data: Dict[str, Any]) -> "AgenticXGUIAgentConfig":
         """从字典创建配置对象"""
         config = cls()
         

@@ -4,8 +4,8 @@ graph TD
         A[用户/开发者]
     end
 
-    subgraph "AgenticSeeker 系统 (agenticseeker.core.system.AgenticSeekerSystem)"
-        B(AgenticSeekerSystem)
+    subgraph "AgenticX-GUIAgent 系统 (core.system.AgenticXGUIAgentSystem)"
+        B(AgenticXGUIAgentSystem)
         C(AgenticX Agent)
         D(工作流引擎)
         E(事件总线)
@@ -17,7 +17,7 @@ graph TD
         B -- "使用" --> F
     end
 
-    subgraph "智能体 (agenticseeker.agents)"
+    subgraph "智能体 (agents)"
         G(ManagerAgent)
         H(ExecutorAgent)
         I(ActionReflectorAgent)
@@ -29,9 +29,9 @@ graph TD
         C -- "包含" --> J
     end
 
-    subgraph "核心协调与基类 (agenticseeker.core)"
+    subgraph "核心协调与基类 (core)"
         K(AgentCoordinator)
-        L(BaseAgenticSeekerAgent)
+        L(BaseAgenticXGUIAgentAgent)
 
         D -- "执行" --> K
         K -- "协调" --> G
@@ -41,7 +41,7 @@ graph TD
         C -- "继承" --> L
     end
 
-    subgraph "知识管理 (agenticseeker.knowledge)"
+    subgraph "知识管理 (knowledge)"
         M(KnowledgeManager)
         N(KnowledgePool)
         O(HybridEmbeddingManager)
@@ -55,7 +55,7 @@ graph TD
         I -- "读取" --> N
     end
 
-    subgraph "数据飞轮 & 强化学习 (agenticseeker.learning)"
+    subgraph "数据飞轮 & 强化学习 (learning)"
         P(RLEnhancedLearningEngine)
         Q(LearningCoordinator)
         R(RL Core)

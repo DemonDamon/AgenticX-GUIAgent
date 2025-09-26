@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Tool Validator
+AgenticX-GUIAgent Tool Validator
 工具验证器：负责工具执行前后的验证、质量检查和结果评估
 
 Author: AgenticX Team

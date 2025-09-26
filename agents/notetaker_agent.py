@@ -32,7 +32,7 @@ from agenticx.core.event_bus import EventBus
 from agenticx.llms.base import BaseLLMProvider
 from agenticx.memory.component import MemoryComponent
 
-from core.base_agent import BaseAgenticSeekerAgent
+from core.base_agent import BaseAgenticXGUIAgentAgent
 from config import AgentConfig
 from knowledge import KnowledgeManager, AgenticXConfig
 from knowledge.config_loader import load_knowledge_config, validate_config
@@ -766,7 +766,7 @@ class KnowledgeOrganizationTool(BaseTool):
         }
 
 
-class NotetakerAgent(BaseAgenticSeekerAgent):
+class NotetakerAgent(BaseAgenticXGUIAgentAgent):
     """知识记录器智能体
     
     负责：

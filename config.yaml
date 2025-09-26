@@ -1,4 +1,4 @@
-# AgenticSeeker 移动GUI智能体系统配置文件
+# AgenticX-GUIAgent 移动GUI智能体系统配置文件
 # 基于AgenticX框架的配置文件
 # Version: 1.0.0 (AgenticX集成版本)
 
@@ -32,7 +32,7 @@ agenticx:
   
   # 平台配置
   platform:
-    name: "AgenticSeeker"
+    name: "AgenticX-GUIAgent"
     version: "2.0.0"
     environment: "development"  # development, production
 
@@ -96,7 +96,7 @@ knowledge:
       endpoint: "localhost:9000"
       access_key: "minioadmin"
       secret_key: "minioadmin"
-      bucket_name: "agenticseeker"
+      bucket_name: "agenticx-guiagent"
       secure: false
       region: "us-east-1"
       part_size: 67108864  # 64MB
@@ -202,18 +202,18 @@ embedding:
     health_check_interval: 60
     failure_threshold: 3
 
-# AgenticSeeker 智能体配置 (基于AgenticX Agent)
+# AgenticX-GUIAgent 智能体配置 (基于AgenticX Agent)
 agents:
   - id: manager_agent
     name: Manager智能体
     role: 任务管理器
     goal: 分析用户任务，制定执行计划，协调其他智能体完成移动GUI任务
-    backstory: 我是AgenticSeeker系统的核心管理者，负责理解用户意图，分解复杂任务，并协调团队完成移动应用操作
+    backstory: 我是AgenticX-GUIAgent系统的核心管理者，负责理解用户意图，分解复杂任务，并协调团队完成移动应用操作
     # 基于AgenticX工具系统的工具配置
     tools: 
-      - "agenticseeker.tools.ClickTool"
-      - "agenticseeker.tools.SwipeTool"
-      - "agenticseeker.tools.ScreenshotTool"
+      - "tools.ClickTool"
+      - "tools.SwipeTool"
+      - "tools.ScreenshotTool"
       - "agenticx.tools.builtin.TaskDecompositionTool"
     # AgenticX Agent配置
     agent_config:
@@ -230,13 +230,13 @@ agents:
     backstory: 我是专业的移动设备操作执行者，精通各种GUI交互操作，能够准确执行各种移动应用操作指令
     # 基于AgenticX工具系统的GUI工具
     tools:
-      - "agenticseeker.tools.ClickTool"
-      - "agenticseeker.tools.SwipeTool"
-      - "agenticseeker.tools.TextInputTool"
-      - "agenticseeker.tools.KeyPressTool"
-      - "agenticseeker.tools.ScreenshotTool"
-      - "agenticseeker.tools.SmartClickTool"
-      - "agenticseeker.tools.SmartScrollTool"
+      - "tools.ClickTool"
+      - "tools.SwipeTool"
+      - "tools.TextInputTool"
+      - "tools.KeyPressTool"
+      - "tools.ScreenshotTool"
+      - "tools.SmartClickTool"
+      - "tools.SmartScrollTool"
     agent_config:
       max_iterations: 15
       memory_enabled: true
@@ -250,10 +250,10 @@ agents:
     goal: 分析执行结果，评估动作效果，提供优化建议和错误恢复策略
     backstory: 我是智能的动作分析师，能够深入分析每个操作的效果，识别问题并提供改进建议
     tools:
-      - "agenticseeker.tools.ScreenshotTool"
-      - "agenticseeker.tools.ImageComparisonTool"
-      - "agenticseeker.tools.OCRTool"
-      - "agenticseeker.evaluation.PerformanceEvaluator"
+      - "tools.ScreenshotTool"
+      - "tools.ImageComparisonTool"
+      - "tools.OCRTool"
+      - "evaluation.PerformanceEvaluator"
     agent_config:
       max_iterations: 8
       memory_enabled: true
@@ -267,8 +267,8 @@ agents:
     goal: 记录操作过程，维护知识库，支持经验积累和知识共享
     backstory: 我是团队的知识管理专家，负责记录所有操作经验，构建知识库，支持团队学习和改进
     tools:
-      - "agenticseeker.knowledge.KnowledgeManager"
-      - "agenticseeker.knowledge.KnowledgePool"
+      - "knowledge.KnowledgeManager"
+      - "knowledge.KnowledgePool"
       - "agenticx.memory.component.Memory"
     agent_config:
       max_iterations: 5
@@ -277,10 +277,10 @@ agents:
       component_based: true
     learning_enabled: true
 
-# AgenticSeeker 工作流配置 (基于AgenticX Workflow)
+# AgenticX-GUIAgent 工作流配置 (基于AgenticX Workflow)
 workflows:
-  - id: agenticseeker_workflow
-    name: AgenticSeeker移动GUI任务执行工作流
+  - id: agenticx_guiagent_workflow
+    name: AgenticX-GUIAgent移动GUI任务执行工作流
     # AgenticX工作流引擎配置
     workflow_config:
       engine: "agenticx.core.workflow_engine.WorkflowEngine"
@@ -457,10 +457,10 @@ mobile:
   
   # AgenticX工具适配器配置
   adapter_config:
-    factory: "agenticseeker.tools.tool_adapters.AdapterFactory"
-    android_adapter: "agenticseeker.tools.tool_adapters.AndroidAdapter"
-    ios_adapter: "agenticseeker.tools.tool_adapters.iOSAdapter"
-    desktop_adapter: "agenticseeker.tools.tool_adapters.DesktopAdapter"
+    factory: "tools.tool_adapters.AdapterFactory"
+    android_adapter: "tools.tool_adapters.AndroidAdapter"
+    ios_adapter: "tools.tool_adapters.iOSAdapter"
+    desktop_adapter: "tools.tool_adapters.DesktopAdapter"
     auto_detection: true
     initialization_timeout: 30
   
@@ -482,7 +482,7 @@ mobile:
   # AgenticX工具管理器集成
   tool_manager:
     enabled: true
-    manager_class: "agenticseeker.tools.gui_tools.GUIToolManager"
+    manager_class: "tools.gui_tools.GUIToolManager"
     event_bus_integration: true
     monitoring_enabled: true
     caching_enabled: true
@@ -536,7 +536,7 @@ monitoring:
   # 日志配置
   logging:
     log_level: "INFO"
-    log_file: "./logs/agenticseeker.log"
+    log_file: "./logs/agenticx-guiagent.log"
     structured_logging: true
     log_rotation: true
     max_file_size: "100MB"
@@ -555,10 +555,10 @@ evaluation:
   
   # AgenticX评估框架集成
   agenticx_evaluation:
-    framework: "agenticseeker.evaluation.framework.EvaluationFramework"
-    test_environment: "agenticseeker.evaluation.test_environment.TestEnvironment"
-    performance_evaluator: "agenticseeker.evaluation.performance_evaluator.PerformanceEvaluator"
-    benchmark_runner: "agenticseeker.evaluation.benchmark_runner.BenchmarkRunner"
+    framework: "evaluation.framework.EvaluationFramework"
+    test_environment: "evaluation.test_environment.TestEnvironment"
+    performance_evaluator: "evaluation.performance_evaluator.PerformanceEvaluator"
+    benchmark_runner: "evaluation.benchmark_runner.BenchmarkRunner"
   
   # 基准测试配置
   benchmarks:

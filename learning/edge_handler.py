@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Learning Engine - Edge Handler (基于AgenticX框架重构)
+AgenticX-GUIAgent Learning Engine - Edge Handler (基于AgenticX框架重构)
 边缘处理器：处理异常情况、边缘案例和错误恢复
 
 重构说明：

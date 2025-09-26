@@ -2,7 +2,7 @@
 
 ## 1. 模块概述
 
-- **模块路径**：`AgenticSeeker/thirdparty/m3-agent/mmagent/utils/`
+- **模块路径**：`AgenticX-GUIAgent/thirdparty/m3-agent/mmagent/utils/`
 - **核心职责**：为M3-Agent系统提供基础工具函数和外部API接口，支撑整个系统的运行
 - **主要组件**：API调用器、视频处理器、通用工具函数集
 

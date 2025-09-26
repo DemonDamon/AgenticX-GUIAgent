@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Learning Engine - Main Learning Engine (基于AgenticX框架重构)
+AgenticX-GUIAgent Learning Engine - Main Learning Engine (基于AgenticX框架重构)
 学习引擎：整合五个阶段的学习组件，提供统一的学习接口
 
 重构说明：

@@ -460,7 +460,7 @@ class EmbeddingPerformanceTester:
 
 async def main():
     """主函数"""
-    print("🚀 AgenticSeeker 混合Embedding性能测试")
+    print("🚀 AgenticX-GUIAgent 混合Embedding性能测试")
     print("=" * 50)
     
     tester = EmbeddingPerformanceTester()

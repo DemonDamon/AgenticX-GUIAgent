@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Performance Evaluator
+AgenticX-GUIAgent Performance Evaluator
 基于AgenticX框架的性能评估器：提供全面的性能评估和分析功能
 
 重构说明：

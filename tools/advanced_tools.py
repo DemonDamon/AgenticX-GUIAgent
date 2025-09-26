@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Advanced GUI Tools
+AgenticX-GUIAgent Advanced GUI Tools
 高级GUI工具：实现智能化的移动设备操作
 
 Author: AgenticX Team

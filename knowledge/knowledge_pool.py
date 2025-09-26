@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Knowledge Pool
+AgenticX-GUIAgent Knowledge Pool
 基于AgenticX框架的知识池：实现统一的知识管理接口和多智能体间的知识共享机制
 
 重构说明：

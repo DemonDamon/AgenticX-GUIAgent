@@ -2,7 +2,7 @@
 
 ## 1. 模块概述
 
-- **模块路径**：`AgenticSeeker/thirdparty/m3-agent/mmagent/`
+- **模块路径**：`AgenticX-GUIAgent/thirdparty/m3-agent/mmagent/`
 - **核心职责**：M3-Agent系统的核心功能实现，提供多模态记忆处理、检索、图结构管理等关键能力
 - **主要组件**：视频图结构、记忆处理器、检索引擎、提示词管理、多模态处理器
 

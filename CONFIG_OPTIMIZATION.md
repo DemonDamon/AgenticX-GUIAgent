@@ -1,10 +1,10 @@
-# AgenticSeeker 配置文件优化说明
+# AgenticX-GUIAgent 配置文件优化说明
 
 基于AgenticX框架的配置系统优化
 
 ## 概述
 
-本次优化将AgenticSeeker的配置系统完全基于AgenticX框架重构，确保与AgenticX生态系统的完美集成。优化涉及三个核心文件：
+本次优化将AgenticX-GUIAgent的配置系统完全基于AgenticX框架重构，确保与AgenticX生态系统的完美集成。优化涉及三个核心文件：
 
 - `config.yaml` - 主配置文件
 - `config.py` - 配置数据模型
@@ -46,7 +46,7 @@ agenticx:
   
   # 平台配置
   platform:
-    name: "AgenticSeeker"
+    name: "AgenticX-GUIAgent"
     version: "2.0.0"
     environment: "development"
 ```
@@ -61,9 +61,9 @@ agents:
   - id: executor_agent
     name: Executor智能体
     tools:
-      - "agenticseeker.tools.ClickTool"
-      - "agenticseeker.tools.SwipeTool"
-      - "agenticseeker.tools.SmartClickTool"
+      - "tools.ClickTool"
+      - "tools.SwipeTool"
+      - "tools.SmartClickTool"
     agent_config:
       max_iterations: 15
       memory_enabled: true
@@ -78,7 +78,7 @@ agents:
 
 ```yaml
 workflows:
-  - id: agenticseeker_workflow
+  - id: agenticx_guiagent_workflow
     workflow_config:
       engine: "agenticx.core.workflow_engine.WorkflowEngine"
       execution_mode: "sequential"
@@ -105,14 +105,14 @@ workflows:
 - **事件驱动学习**: 支持基于事件的学习机制
 
 #### **移动设备工具适配器**
-- **适配器工厂**: 使用`agenticseeker.tools.tool_adapters.AdapterFactory`
+- **适配器工厂**: 使用`tools.tool_adapters.AdapterFactory`
 - **平台适配**: Android、iOS、Desktop适配器
-- **工具管理器**: 集成`agenticseeker.tools.gui_tools.GUIToolManager`
+- **工具管理器**: 集成`tools.gui_tools.GUIToolManager`
 
 #### **监控和评估系统升级**
 - **AgenticX可观测性**: 集成tracing、metrics、event monitoring
 - **结构化指标**: 按执行、智能体、GUI操作、学习、资源分类
-- **评估框架**: 使用AgenticSeeker评估组件
+- **评估框架**: 使用AgenticX-GUIAgent评估组件
 
 ### 2. **config.py** - 配置数据模型优化
 
@@ -168,7 +168,7 @@ class AgentConfig:
 
 #### **AgenticX集成工具函数**
 ```python
-def create_agenticx_event(event_type: str, data: Dict[str, Any], source: str = "agenticseeker") -> Dict[str, Any]:
+def create_agenticx_event(event_type: str, data: Dict[str, Any], source: str = "agenticx-guiagent") -> Dict[str, Any]:
     """创建AgenticX事件"""
     return {
         "type": event_type,
@@ -177,7 +177,7 @@ def create_agenticx_event(event_type: str, data: Dict[str, Any], source: str = "
         "timestamp": get_iso_timestamp()
     }
 
-def setup_agenticx_logger(name: str = "agenticseeker", **kwargs) -> logging.Logger:
+def setup_agenticx_logger(name: str = "agenticx-guiagent", **kwargs) -> logging.Logger:
     """设置AgenticX兼容的日志记录器"""
     default_format = (
         "%(asctime)s - [AgenticX] - %(name)s - %(levelname)s - "
@@ -236,13 +236,13 @@ class AgenticXContextManager(AsyncContextManager):
 
 ### 加载和使用配置
 ```python
-from agenticseeker.config import AgenticSeekerConfig
-from agenticseeker.utils import load_config, validate_agenticx_config
+from config import AgenticXGUIAgentConfig
+from utils import load_config, validate_agenticx_config
 
 # 加载配置
 config_data = load_config("config.yaml")
 validate_agenticx_config(config_data)
-config = AgenticSeekerConfig.from_dict(config_data)
+config = AgenticXGUIAgentConfig.from_dict(config_data)
 
 # 访问AgenticX配置
 print(f"Event Bus enabled: {config.agenticx.event_bus_enabled}")
@@ -255,7 +255,7 @@ for agent in config.agents:
 
 ### 创建AgenticX事件
 ```python
-from agenticseeker.utils import create_agenticx_event
+from utils import create_agenticx_event
 
 # 创建工具执行事件
 event = create_agenticx_event(
@@ -265,13 +265,13 @@ event = create_agenticx_event(
         "success": True,
         "duration": 1.5
     },
-    "agenticseeker.tools"
+    "tools"
 )
 ```
 
 ### 使用AgenticX上下文管理器
 ```python
-from agenticseeker.utils import AgenticXContextManager
+from utils import AgenticXContextManager
 from agenticx.core.event_bus import EventBus
 
 event_bus = EventBus()
@@ -340,4 +340,4 @@ except ValueError as e:
 
 ---
 
-本次优化确保AgenticSeeker配置系统与AgenticX框架完全兼容，为后续的功能扩展和性能优化奠定了坚实基础。
+本次优化确保AgenticX-GUIAgent配置系统与AgenticX框架完全兼容，为后续的功能扩展和性能优化奠定了坚实基础。

@@ -2,7 +2,7 @@
 
 ## 1. 模块概述
 
-- **模块路径**：`AgenticSeeker/thirdparty/m3-agent/m3_agent/`
+- **模块路径**：`AgenticX-GUIAgent/thirdparty/m3-agent/m3_agent/`
 - **核心职责**：M3-Agent系统的主流程编排和控制，负责整个Agent的记忆化和控制两大核心流程
 - **主要组件**：控制器、记忆化中间输出处理器、记忆图构建器
 

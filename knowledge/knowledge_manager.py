@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Knowledge Manager
+AgenticX-GUIAgent Knowledge Manager
 基于AgenticX框架的知识管理器：使用AgenticX的storage和retrieval组件
 
 重构说明：

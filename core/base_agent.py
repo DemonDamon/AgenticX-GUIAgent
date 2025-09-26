@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker基础智能体模块
+AgenticX-GUIAgent基础智能体模块
 
-提供所有AgenticSeeker智能体的基类和核心功能。
+提供所有AgenticX-GUIAgent智能体的基类和核心功能。
 基于AgenticX框架构建，继承其核心Agent类和Component。
 """
 
@@ -47,10 +47,10 @@ class AgentState:
         self.last_update = get_iso_timestamp()
 
 
-class BaseAgenticSeekerAgent(Component, ABC):
-    """AgenticSeeker智能体基类
+class BaseAgenticXGUIAgentAgent(Component, ABC):
+    """AgenticX-GUIAgent智能体基类
     
-    基于AgenticX框架构建，提供所有AgenticSeeker智能体的基础功能：
+    基于AgenticX框架构建，提供所有AgenticX-GUIAgent智能体的基础功能：
     - 继承AgenticX的Agent模型
     - 使用AgenticX事件系统进行通信
     - 状态管理和同步

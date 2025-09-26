@@ -31,7 +31,7 @@ from agenticx.core.event_bus import EventBus
 from agenticx.llms.base import BaseLLMProvider
 from agenticx.memory.component import MemoryComponent
 
-from core.base_agent import BaseAgenticSeekerAgent
+from core.base_agent import BaseAgenticXGUIAgentAgent
 from config import AgentConfig
 from utils import get_iso_timestamp
 
@@ -941,7 +941,7 @@ class LearningInsightTool(BaseTool):
         return patterns
 
 
-class ActionReflectorAgent(BaseAgenticSeekerAgent):
+class ActionReflectorAgent(BaseAgenticXGUIAgentAgent):
     """多模态动作反思器智能体 - 基于AgenticX框架和Mobile Agent v3设计精髓
     
     负责：

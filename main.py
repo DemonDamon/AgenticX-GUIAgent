@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker 移动GUI智能体系统主程序
+AgenticX-GUIAgent 移动GUI智能体系统主程序
 
 基于AgenticX框架构建的四智能体协作系统，
 融合MobileAgent v3架构和五阶段学习方法论。
@@ -20,7 +20,7 @@ from typing import Dict, Any, Optional
 from loguru import logger
 
 # 添加项目根目录到Python路径# 添加项目路径
-# 为了支持从 'agenticseeker' 进行绝对导入，需要将其父目录添加到 sys.path
+# 为了支持从 'agenticx-guiagent' 进行绝对导入，需要将其父目录添加到 sys.path
 project_root = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(project_root))
 
@@ -44,16 +44,16 @@ from agenticx.llms.bailian_provider import BailianProvider
 from agenticx.memory.component import MemoryComponent
 from agenticx.tools.executor import ToolExecutor
 
-# 导入AgenticSeeker内部的Platform定义
+# 导入AgenticX-GUIAgent内部的Platform定义
 from tools.gui_tools import Platform
 
-# 导入AgenticSeeker组件
+# 导入AgenticX-GUIAgent组件
 try:
     from agents import ManagerAgent, ExecutorAgent, ActionReflectorAgent, NotetakerAgent
     from core.info_pool import InfoPool
     from tools.gui_tools import GUIToolManager
     from workflows.collaboration import AgentCoordinator
-    from config import AgenticSeekerConfig, AgentConfig
+    from config import AgenticXGUIAgentConfig, AgentConfig
     from utils import setup_logger, load_config, validate_agenticx_config
     from learning.learning_engine import LearningEngine
     from evaluation.framework import EvaluationFramework
@@ -65,9 +65,9 @@ except ImportError as e:
     sys.exit(1)
 
 
-class AgenticSeekerApp:
+class AgenticXGUIAgentApp:
     """
-    AgenticSeeker应用程序主类
+    AgenticX-GUIAgent应用程序主类
     
     基于AgenticX框架的四智能体协作系统，
     集成了完整的配置管理、学习引擎、工具管理和评估框架。
@@ -75,13 +75,13 @@ class AgenticSeekerApp:
     
     def __init__(self, config_path: Optional[str] = None):
         """
-        初始化AgenticSeeker应用程序
+        初始化AgenticX-GUIAgent应用程序
         
         Args:
             config_path: 配置文件路径，默认为config.yaml
         """
         self.config_path = config_path or "config.yaml"
-        self.config: Optional[AgenticSeekerConfig] = None
+        self.config: Optional[AgenticXGUIAgentConfig] = None
         # 配置loguru日志并禁用标准logging
         import logging
         
@@ -98,7 +98,7 @@ class AgenticSeekerApp:
             colorize=True
         )
         logger.add(
-            "logs/agenticseeker.log",
+            "logs/agenticx-guiagent.log",
             format="{time:YYYY-MM-DD HH:mm:ss.SSS} | {level: <8} | {name}:{function}:{line} - {message}",
             level="DEBUG",
             rotation="10 MB",
@@ -133,7 +133,7 @@ class AgenticSeekerApp:
         self.event_bus: Optional[EventBus] = None
         self.llm_provider: Optional[OpenAIProvider] = None
         
-        # AgenticSeeker核心组件
+        # AgenticX-GUIAgent核心组件
         self.info_pool: Optional[InfoPool] = None
         self.agent_coordinator: Optional[AgentCoordinator] = None
         self.learning_engine: Optional[LearningEngine] = None
@@ -150,7 +150,7 @@ class AgenticSeekerApp:
         """
         异步初始化所有组件
         """
-        logger.info("开始初始化AgenticSeeker系统...")
+        logger.info("开始初始化AgenticX-GUIAgent系统...")
         
         try:
             # 加载和验证配置
@@ -159,8 +159,8 @@ class AgenticSeekerApp:
             # 初始化AgenticX核心组件
             await self._initialize_agenticx_components()
             
-            # 初始化AgenticSeeker组件
-            await self._initialize_agenticseeker_components()
+            # 初始化AgenticX-GUIAgent组件
+            await self._initialize_agenticx_guiagent_components()
             
             # 启动核心组件
             await self._start_components()
@@ -174,7 +174,7 @@ class AgenticSeekerApp:
             # 初始化协调器
             await self._initialize_coordinator()
             
-            logger.info("AgenticSeeker系统初始化完成！")
+            logger.info("AgenticX-GUIAgent系统初始化完成！")
             
         except Exception as e:
             logger.error(f"系统初始化失败: {e}")
@@ -194,7 +194,7 @@ class AgenticSeekerApp:
                     'event_bus': {'enabled': True},
                     'components': {'auto_initialize': True},
                     'tools': {'timeout_default': 30.0},
-                    'platform': {'name': 'AgenticSeeker', 'version': '2.0.0'}
+                    'platform': {'name': 'AgenticX-GUIAgent', 'version': '2.0.0'}
                 },
                 'llm': {
                     'provider': 'openai',
@@ -218,7 +218,7 @@ class AgenticSeekerApp:
         validate_agenticx_config(config_data)
         
         # 创建配置对象
-        self.config = AgenticSeekerConfig.from_dict(config_data)
+        self.config = AgenticXGUIAgentConfig.from_dict(config_data)
         logger.info("配置加载和验证完成")
     
     async def _initialize_agenticx_components(self) -> None:
@@ -257,9 +257,9 @@ class AgenticSeekerApp:
             )
             logger.info(f"OpenAI LLM提供者初始化完成，模型: {llm_config.model}")
     
-    async def _initialize_agenticseeker_components(self) -> None:
+    async def _initialize_agenticx_guiagent_components(self) -> None:
         """
-        初始化AgenticSeeker组件
+        初始化AgenticX-GUIAgent组件
         """
         # 初始化信息池
         self.info_pool = InfoPool(event_bus=self.event_bus)
@@ -526,7 +526,7 @@ class AgenticSeekerApp:
         """
         关闭系统
         """
-        logger.info("开始关闭AgenticSeeker系统...")
+        logger.info("开始关闭AgenticX-GUIAgent系统...")
         
         try:
             # 停止所有智能体
@@ -554,7 +554,7 @@ class AgenticSeekerApp:
             # Platform是枚举，无需停止操作
             logger.info(f"Platform {self.platform} 无需停止操作")
             
-            logger.info("AgenticSeeker系统已关闭")
+            logger.info("AgenticX-GUIAgent系统已关闭")
             
         except Exception as e:
             logger.error(f"关闭系统时出错: {e}")
@@ -568,7 +568,7 @@ def create_argument_parser() -> argparse.ArgumentParser:
         配置好的参数解析器
     """
     parser = argparse.ArgumentParser(
-        description="AgenticSeeker - 基于AgenticX框架的移动GUI智能体系统",
+        description="AgenticX-GUIAgent - 基于AgenticX框架的移动GUI智能体系统",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 示例用法:
@@ -617,12 +617,12 @@ def create_argument_parser() -> argparse.ArgumentParser:
     return parser
 
 
-async def run_interactive_mode(app: AgenticSeekerApp) -> None:
+async def run_interactive_mode(app: AgenticXGUIAgentApp) -> None:
     """
     运行交互模式
     
     Args:
-        app: AgenticSeeker应用实例
+        app: AgenticX-GUIAgent应用实例
     """
     # 示例任务
     task_examples = [
@@ -635,7 +635,7 @@ async def run_interactive_mode(app: AgenticSeekerApp) -> None:
     ]
     
     print("\n" + "=" * 60)
-    print("🤖 AgenticSeeker 移动GUI智能体系统")
+    print("🤖 AgenticX-GUIAgent 移动GUI智能体系统")
     print("基于AgenticX框架 v2.0.0")
     print("=" * 60)
     print("\n💡 支持的示例任务:")
@@ -699,10 +699,10 @@ async def main() -> int:
     parser = create_argument_parser()
     args = parser.parse_args()
     
-    # loguru日志已在AgenticSeekerApp初始化时配置
+    # loguru日志已在AgenticXGUIAgentApp初始化时配置
     
     # 创建应用实例
-    app = AgenticSeekerApp(config_path=args.config)
+    app = AgenticXGUIAgentApp(config_path=args.config)
     
     try:
         # 初始化应用

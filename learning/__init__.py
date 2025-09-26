@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Learning Module - RL增强的学习模块
+AgenticX-GUIAgent Learning Module - RL增强的学习模块
 学习模块：五阶段学习引擎 + 强化学习能力
 
 重构说明：
@@ -265,4 +265,4 @@ if RL_CORE_AVAILABLE:
 # 版本信息
 __version__ = "3.0.0"
 __author__ = "AgenticX Team"
-__description__ = "AgenticSeeker学习模块 - RL增强的五阶段学习引擎，支持强化学习和知识协作"
+__description__ = "AgenticX-GUIAgent学习模块 - RL增强的五阶段学习引擎，支持强化学习和知识协作"

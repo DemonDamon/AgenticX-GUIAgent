@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Learning Engine - Learning Coordinator (基于AgenticX框架重构)
+AgenticX-GUIAgent Learning Engine - Learning Coordinator (基于AgenticX框架重构)
 学习协调器：协调五个阶段的学习组件，管理学习流程和状态
 
 重构说明：

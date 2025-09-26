@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Evaluation Framework
+AgenticX-GUIAgent Evaluation Framework
 基于AgenticX框架的评估框架：整合所有评估组件，提供统一的评估接口
 
 重构说明：

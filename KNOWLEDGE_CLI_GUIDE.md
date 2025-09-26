@@ -2,7 +2,7 @@
 
 ## 概述
 
-本工具提供了便捷的命令行接口来管理AgenticSeeker的知识库，包括查看状态、查询知识、导出数据等功能。
+本工具提供了便捷的命令行接口来管理AgenticX-GUIAgent的知识库，包括查看状态、查询知识、导出数据等功能。
 
 ## 安装和配置
 
@@ -13,7 +13,7 @@
 python --version
 
 # 安装依赖
-cd /path/to/agenticseeker
+cd /path/to/agenticx-guiagent
 pip install -r requirements.txt
 ```
 
@@ -237,7 +237,7 @@ MILVUS_CONFIG = {
     "port": 19530,
     "user": "",
     "password": "",
-    "collection_name": "agenticseeker_knowledge",
+    "collection_name": "agenticx_guiagent_knowledge",
     "dimension": 1536,
     "metric_type": "COSINE"
 }

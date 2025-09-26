@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Tools Module
+AgenticX-GUIAgent Tools Module
 GUI操作工具集：基于AgenticX框架的移动设备操作工具
 
 本模块已完全基于AgenticX框架重构，提供：

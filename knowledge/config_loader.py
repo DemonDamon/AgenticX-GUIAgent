@@ -142,7 +142,7 @@ class ConfigLoader:
     def get_env_template(self) -> str:
         """生成环境变量模板"""
         template = [
-            "# AgenticSeeker Embedding 环境变量配置",
+            "# AgenticX-GUIAgent Embedding 环境变量配置",
             "# 请根据您使用的embedding提供者设置相应的API密钥",
             "",
             "# 阿里云百炼配置",

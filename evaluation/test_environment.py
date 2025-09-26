@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Test Environment
+AgenticX-GUIAgent Test Environment
 基于AgenticX框架的测试环境：提供完整的测试环境和测试执行框架
 
 重构说明：
@@ -33,7 +33,7 @@ from agenticx.core.tool import BaseTool
 from agenticx.core.agent import Agent, AgentResult
 
 from utils import get_iso_timestamp, setup_logger
-from core.base_agent import BaseAgenticSeekerAgent
+from core.base_agent import BaseAgenticXGUIAgentAgent
 
 
 class TestStatus(Enum):

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker AgenticX Adapter
+AgenticX-GUIAgent AgenticX Adapter
 基于AgenticX框架的知识管理适配器：整合AgenticX的storage和retrieval组件
 
 Author: AgenticX Team
@@ -358,10 +358,10 @@ class AgenticXKnowledgeManager:
         logger.info(f"初始化检索器，类型: {retrieval_type}")
 
         if retrieval_type == "vector":
-            self.retriever = VectorRetriever(tenant_id="agenticseeker", embedding_provider=self.embedding_provider, vector_storage=vector_storage)
+            self.retriever = VectorRetriever(tenant_id="agenticx-guiagent", embedding_provider=self.embedding_provider, vector_storage=vector_storage)
         
         elif retrieval_type == "hybrid":
-            vector_retriever = VectorRetriever(tenant_id="agenticseeker", embedding_provider=self.embedding_provider, vector_storage=vector_storage)
+            vector_retriever = VectorRetriever(tenant_id="agenticx-guiagent", embedding_provider=self.embedding_provider, vector_storage=vector_storage)
             
             # BM25Retriever需要一个文档存储，我们可以使用Postgres或Redis
             doc_storage = self.get_storage(PostgresStorage)
@@ -373,17 +373,17 @@ class AgenticXKnowledgeManager:
                 self.retriever = vector_retriever
             else:
                 logger.info(f"为BM25Retriever找到文档存储: {doc_storage.__class__.__name__}")
-                bm25_retriever = BM25Retriever(tenant_id="agenticseeker", doc_storage=doc_storage)
+                bm25_retriever = BM25Retriever(tenant_id="agenticx-guiagent", doc_storage=doc_storage)
                 
                 self.retriever = HybridRetriever(
-                    tenant_id="agenticseeker",
+                    tenant_id="agenticx-guiagent",
                     vector_retriever=vector_retriever,
                     bm25_retriever=bm25_retriever,
                     # weights=[0.5, 0.5] # 可以选择性添加权重
                 )
         else:
             logger.warning(f"不支持的检索类型: {retrieval_type}，将使用默认的向量检索")
-            self.retriever = VectorRetriever(tenant_id="agenticseeker", embedding_provider=self.embedding_provider, vector_storage=vector_storage)
+            self.retriever = VectorRetriever(tenant_id="agenticx-guiagent", embedding_provider=self.embedding_provider, vector_storage=vector_storage)
 
         if self.retriever:
             await self.retriever.initialize()

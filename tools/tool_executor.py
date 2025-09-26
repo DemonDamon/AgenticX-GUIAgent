@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Tool Executor
+AgenticX-GUIAgent Tool Executor
 工具执行器：负责工具的执行调度、队列管理和结果处理
 
 Author: AgenticX Team

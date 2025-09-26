@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker工具模块
+AgenticX-GUIAgent工具模块
 
 基于AgenticX框架的通用工具函数，提供日志、配置加载、异常处理等功能。
 
@@ -30,7 +30,7 @@ from functools import wraps
 
 
 def setup_logger(
-    name: str = "agenticseeker",
+    name: str = "agenticx-guiagent",
     level: str = "INFO",
     log_file: Optional[str] = None,
     format_string: Optional[str] = None
@@ -408,7 +408,7 @@ def truncate_string(s: str, max_length: int = 100, suffix: str = "...") -> str:
 
 # ==================== AgenticX集成工具函数 ====================
 
-def create_agenticx_event(event_type: str, data: Dict[str, Any], source: str = "agenticseeker") -> Dict[str, Any]:
+def create_agenticx_event(event_type: str, data: Dict[str, Any], source: str = "agenticx-guiagent") -> Dict[str, Any]:
     """创建AgenticX事件
     
     Args:
@@ -427,7 +427,7 @@ def create_agenticx_event(event_type: str, data: Dict[str, Any], source: str = "
     }
 
 
-def setup_agenticx_logger(name: str = "agenticseeker", **kwargs) -> "logger":
+def setup_agenticx_logger(name: str = "agenticx-guiagent", **kwargs) -> "logger":
     """设置AgenticX兼容的日志记录器
     
     Args:
@@ -534,7 +534,7 @@ def extract_agenticx_metrics(data: Dict[str, Any]) -> Dict[str, Any]:
     """
     metrics = {
         "timestamp": get_iso_timestamp(),
-        "source": "agenticseeker"
+        "source": "agenticx-guiagent"
     }
     
     # 提取执行指标

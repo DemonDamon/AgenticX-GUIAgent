@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker Tool Monitor
+AgenticX-GUIAgent Tool Monitor
 工具监控器：负责工具执行的实时监控、性能分析和异常检测
 
 Author: AgenticX Team

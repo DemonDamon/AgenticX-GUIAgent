@@ -57,8 +57,8 @@ class InfoPriority(Enum):
 
 
 @dataclass
-class AgenticSeekerInfoPool:
-    """AgenticSeeker信息池 - 参考Mobile Agent v3设计，基于AgenticX框架"""
+class AgenticXGUIAgentInfoPool:
+    """AgenticX-GUIAgent信息池 - 参考Mobile Agent v3设计，基于AgenticX框架"""
     
     # 用户输入和累积知识
     instruction: str = ""

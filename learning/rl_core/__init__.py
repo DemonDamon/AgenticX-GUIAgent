@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-AgenticSeeker RL Core Module - 强化学习核心组件
+AgenticX-GUIAgent RL Core Module - 强化学习核心组件
 
 基于PRD设计的RL核心模块，提供：
 - M6: RL环境抽象 (environment)
@@ -107,4 +107,4 @@ __all__ = [
 
 __version__ = "1.0.0"
 __author__ = "AgenticX Team"
-__description__ = "AgenticSeeker强化学习核心模块 - 提供完整的RL基础设施"
+__description__ = "AgenticX-GUIAgent强化学习核心模块 - 提供完整的RL基础设施"
