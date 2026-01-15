@@ -2,6 +2,8 @@
 __pycache__/
 *.py[codz]
 *$py.class
+.docs/
+**/.docs/
 
 # C extensions
 *.so
@@ -211,3 +213,4 @@ test_results/
 evaluation_results/
 docker/data/
 .DS_Store
+knowledge_base/
