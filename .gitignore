@@ -214,3 +214,4 @@ evaluation_results/
 docker/data/
 .DS_Store
 knowledge_base/
+conclusions/
